@@ -1,0 +1,17 @@
+<h1>Create a new show</h1>
+
+<%= form_with model: Show.new do |f| %>
+    <%= f.label :name, "Name"%>
+    <%= f.text_field :name %>
+    <%= collection_select(:show, :episode_id, Episode.all, :id, :date) %>
+    <%= collection_select(:show, :guest_id, Guest.all, :id, :name)%>
+    <%= f.label :rating, "Rating" %>
+    <select name="rating[rating]" id="">
+        <option value = "1">rating 1</option>
+        <option value = "2">rating 1</option>
+        <option value = "3">rating 1</option>
+        <option value = "4">rating 1</option>
+        <option value = "4">rating 1</option>
+    </select>    
+    <%= f.submit%>
+    <%end %>
